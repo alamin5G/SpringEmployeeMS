@@ -12,4 +12,9 @@ public class MainController {
 		
 		return "home";
 	}
+	
+	@RequestMapping("/addEmployee")
+	public String addEmployee() {
+		return "add-employee";
+	}
 }

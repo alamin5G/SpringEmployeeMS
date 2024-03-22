@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -28,7 +31,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-md bg-dark border-bottom border-body bg-body-tertiary " data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Employee MS</a>
+                <a class="navbar-brand" href="homepage">Employee MS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -37,10 +40,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="homepage">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Employee</a>
+                            <a class="nav-link" href="addEmployee">Add Employee</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -67,6 +70,7 @@
                 </div>
             </div>
         </nav>
+        <h1>Home Page</h1>
 
     </div>
     <!--[if lt IE 7]>
