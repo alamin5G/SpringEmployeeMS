@@ -73,45 +73,60 @@
 				</div>
 			</div>
 		</nav>
-		<h1>Add Employee</h1>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 offset-md-3">
-					<div class="card bg-success text-white">
-						<div class="card-header text-center">
-							<h3>Add Employee</h3>
-						</div>
-						<div class="card-body">
-							<form action="#" method="post">
-								<div class="mb-3">
-									<label for="name" class="form-label">Employee Name</label> <input
-										type="text" class="form-control" id="name"
-										placeholder="Enter Employee Full Name">
-								</div>
-								<div class="mb-3">
-									<label for="email" class="from-label">Email Address</label> <input
-										type="email" class="form-control" id="email"
-										placeholder="Enter employee email address">
-								</div>
-								<div class="mb-3">
-									<label for="phone" class="form-label">Phone No</label> <input
-										type="tel" class="form-control" id="phone"
-										placeholder="Enter Employee phone number" maxlength="11"
-										minlength="11">
-								</div>
-								<div class="mb-3">
-									<label for="dob" class="form-label">Date of Birth</label> <input
-										type="date" class="form-control" id="dob">
-								</div>
+		
+        <div class="container bg-body-tertiary pb-3 rounded-3">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card bg-success text-white mt-5">
+                        <div class="card-header text-center">
+                            <h3>Add Employee</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" method="post">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Employee Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Employee Full Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="from-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter employee email address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone No</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Enter Employee phone number" maxlength="11" minlength="11">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="designation" class="form-label">Designation</label>
+                                    <input type="text" class="form-control" id="designation" placeholder="Enter Designation">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Password" class="form-label">Enter Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter new password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Enter Address</label>
+                                    <input class="form-control" name="address" id="address" placeholder="Enter address"></input>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terms-and-condition">
+                                    <label for="terms-and-condition" class="form-check-label">I Agreed on Terms and Condition</label>
+                                </div>
 
+                                <div class="mt-1">
+                                    <button type="submit" class="btn btn-outline-warning btn-success mb-2" >Add Employee</button>
+                                </div>
 
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                            </form>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
 	<!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
