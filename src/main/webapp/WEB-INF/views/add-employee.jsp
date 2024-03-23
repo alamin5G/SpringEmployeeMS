@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+	<%@page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -78,46 +81,57 @@
         <div class="container bg-body-tertiary pb-3 rounded-3">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <div class="card bg-success text-white mt-5">
+                    <div class="card bg-success text-white mt-3">
                         <div class="card-header text-center">
                             <h3>Add Employee</h3>
                         </div>
+                        <div class="bg-warning pt-2 text-center text-black rounded">
+                        	<c:if test="${not empty msg }">
+                        		<h5>${msg }</h5>
+                        		<c:remove var="msg"/>
+                        	</c:if>
+                        </div>
                         <div class="card-body">
-                            <form action="#" method="post">
+                            <form action="addingEmployee" method="post">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Employee Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Employee Full Name">
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Enter Employee Full Name">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="from-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter employee email address">
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="Enter employee email address">
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone No</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="Enter Employee phone number" maxlength="11" minlength="11">
+                                    <input name="phone" type="tel" class="form-control" id="phone" placeholder="Enter Employee phone number" maxlength="11" minlength="11">
                                 </div>
                                 <div class="mb-3">
                                     <label for="dob" class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control" id="dob">
+                                    <input name="dob" type="date" class="form-control" id="dob">
                                 </div>
                                 <div class="mb-3">
                                     <label for="designation" class="form-label">Designation</label>
-                                    <input type="text" class="form-control" id="designation" placeholder="Enter Designation">
+                                    <input name="designation" type="text" class="form-control" id="designation" placeholder="Enter Designation">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="salary" class="form-label">Enter Salary</label>
+                                    <input name="salary" type="number" name="salary" id="salary" class="form-control" placeholder="Enter Salary">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Enter Address</label>
+                                    <input name="address" class="form-control" name="address" id="address" placeholder="Enter address"></input>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Password" class="form-label">Enter Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Enter new password">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address" class="form-label">Enter Address</label>
-                                    <input class="form-control" name="address" id="address" placeholder="Enter address"></input>
+                                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter new password">
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="terms-and-condition">
+                                    <input name="checkbox" type="checkbox" class="form-check-input" id="terms-and-condition">
                                     <label for="terms-and-condition" class="form-check-label">I Agreed on Terms and Condition</label>
                                 </div>
 
-                                <div class="mt-1">
+                                <div class="mt-1 text-center">
                                     <button type="submit" class="btn btn-outline-warning btn-success mb-2" >Add Employee</button>
                                 </div>
 
