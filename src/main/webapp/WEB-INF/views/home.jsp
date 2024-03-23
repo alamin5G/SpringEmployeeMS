@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+	<%@page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -70,8 +73,70 @@
                 </div>
             </div>
         </nav>
-        <h1>Home Page</h1>
 
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>All Employee Details</h4>
+                    </div>
+                    <div class="bg-warning pt-2 text-center text-black rounded">
+                        	<c:if test="${not empty msg }">
+                        		<h5>${msg }</h5>
+                        		<c:remove var="msg"/>
+                        	</c:if>
+                        </div>
+                       <div class="bg-danger pt-2 text-center text-white rounded">
+                        	<c:if test="${not empty msgs }">
+                        		<h5>${msgs }</h5>
+                        		<c:remove var="msg"/>
+                        	</c:if>
+                        </div>
+                    <div class="card-body">
+                        <table class="table table-hover table-secondary table-striped">
+                            <thead>
+                              <tr class="table-info">
+                                <th scope="col">ID</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Birthday</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Salary</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${employeeList }" var="employee">
+                            
+                            
+                              <tr>
+                                <th scope="row">${employee.id }</th>
+                                <td>${employee.name }</td>
+                                <td>${employee.email }</td>
+                                <td>${employee.phone }</td>
+                                <td>${employee.dob }</td>
+                                <td>${employee.designation }</td>
+                                <td>${employee.salary }</td>
+                                <td>${employee.address }</td>
+                                <td>
+                                    <a href="editingEmployee/${employee.id }" class="btn btn-sm bg-warning text-white" >Edit</a>
+                                    <a href="deleteingEmployee/${employee.id }" class="btn btn-sm bg-danger text-white mt-auto">Delete</a>
+                                </td>
+
+                              </tr>
+                            </c:forEach>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

@@ -21,16 +21,12 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@OrderColumn
 	private String name;
 	
-	@OrderColumn
 	private String email;
 	
-	@OrderColumn
 	private String phone;
 	
-	@OrderColumn
 	private String dob;
 	
 	private String designation;
