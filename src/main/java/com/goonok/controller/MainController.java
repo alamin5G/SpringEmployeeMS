@@ -72,5 +72,17 @@ public class MainController {
 		session.setAttribute("msgs", "user " + id  + " deleted successfully!");
 		return "redirect:/homepage";
 	}
+	
+	@RequestMapping("/registration")
+	public String registerAnAccount() {
+		
+		return "register";
+	}
+	
+	@RequestMapping("/login")
+	public String loginAccount() {
+		
+		return "login";
+	}
 
 }

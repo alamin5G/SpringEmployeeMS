@@ -52,7 +52,16 @@
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="homepage">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="addEmployee">Add
-								Employee</a></li>
+								Employee</a>
+						</li>
+						
+						<li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="registration">Register</a>
+                        </li>
+								
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
@@ -85,12 +94,14 @@
                         <div class="card-header text-center">
                             <h3>Add Employee</h3>
                         </div>
-                        <div class="bg-warning pt-2 text-center text-black rounded">
-                        	<c:if test="${not empty msg }">
+                         <c:if test="${not empty msg }">
+                    	<div class="bg-warning pt-2 text-center text-black rounded">
+                        	
                         		<h5>${msg }</h5>
                         		<c:remove var="msg"/>
-                        	</c:if>
+                        	
                         </div>
+                        </c:if>
                         <div class="card-body">
                             <form action="addingEmployee" method="post">
                                 <div class="mb-3">
