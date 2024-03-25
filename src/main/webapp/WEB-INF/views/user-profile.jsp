@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Welcome, ${loginUser.name }</h1>
+	<h3> <a href="logout">${loginUser.name }, Logout</a> </h3>
 </body>
 </html>

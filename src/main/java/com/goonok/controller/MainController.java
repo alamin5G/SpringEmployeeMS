@@ -3,6 +3,7 @@ package com.goonok.controller;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,6 +117,14 @@ public class MainController {
 	public String userProfile() {
 		
 		return "user-profile";
+	}
+	
+	@RequestMapping("/logout")
+	public String userLogout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("loginUser");
+		session.setAttribute("msg", "Successfully Logout");
+		return "redirect:/login";
 	}
 
 }

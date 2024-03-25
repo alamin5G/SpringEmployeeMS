@@ -68,6 +68,13 @@
 
 	</bean>
 	
+	<mvc:annotation-driven/>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/userProfile"/>
+			<bean class="com.goonok.interceptor.AuthInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>
