@@ -95,9 +95,16 @@
                         		<h5>${msg }</h5>
                         </div>
                         <c:remove var="msg"/>
-                        </c:if>
+                     </c:if>
+                     <c:if test="${not empty lgn }">
+                    <div class="bg-warning pt-2 text-center text-black rounded">
+                        	
+                        		<h5>${lgn }</h5>
+                        </div>
+                        <c:remove var="lgn"/>
+                     </c:if>
                     	<div class="card-body">
-                            <form action="addingEmployee" method="post">
+                            <form action="login-process" method="get">
                               
                                 <div class="mb-3">
                                     <label for="email" class="from-label">Email Address</label>

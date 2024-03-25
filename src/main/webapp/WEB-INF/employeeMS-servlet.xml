@@ -48,6 +48,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.goonok.entity.Employee</value>
+				<value>com.goonok.entity.User</value>
 			</list>
 		</property>
 	</bean>

@@ -14,13 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.goonok.dao.Dao;
+import com.goonok.dao.UserDao;
 import com.goonok.entity.Employee;
+import com.goonok.entity.User;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	Dao dao;
+	
+	@Autowired
+	UserDao userDao;
 
 	@RequestMapping("/homepage")
 	public String homePage(Model model) {
@@ -79,10 +84,25 @@ public class MainController {
 		return "register";
 	}
 	
+	@RequestMapping(path = "/registration-process", method = RequestMethod.POST)
+	public String registrationProcess(@ModelAttribute User user, HttpSession session) {
+		userDao.registerUser(user);
+		session.setAttribute("msg", "Registration is success!");
+		return "redirect:/login";
+	}
+	
+	
+	
 	@RequestMapping("/login")
 	public String loginAccount() {
 		
 		return "login";
+	}
+	
+	@RequestMapping(path = "login-process", method = RequestMethod.GET)
+	public String loginProcess() {
+		
+		return "homepage";
 	}
 
 }

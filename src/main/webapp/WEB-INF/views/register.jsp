@@ -97,7 +97,7 @@
                         </c:if>
                         
                     	<div class="card-body">
-                            <form action="addingEmployee" method="post">
+                            <form action="registration-process" method="post">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Your Your Name</label>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Enter Your Name">
@@ -112,7 +112,7 @@
                                 </div>
                                 
                                 <div class="mb-3">
-                                    <label for="Password" class="form-label">Enter Password</label>
+                                    <label for="password" class="form-label">Enter Password</label>
                                     <input name="password" type="password" class="form-control" id="password" placeholder="Enter new password">
                                 </div>
                                 
