@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.goonok.dao.Dao;
 import com.goonok.dao.UserDao;
@@ -23,7 +24,7 @@ public class MainController {
 
 	@Autowired
 	Dao dao;
-	
+
 	@Autowired
 	UserDao userDao;
 
@@ -72,37 +73,49 @@ public class MainController {
 
 	@RequestMapping("/deleteingEmployee/{id}")
 	public String deleteEmployee(@PathVariable int id, HttpSession session) {
-		
+
 		dao.deleteById(id);
-		session.setAttribute("msgs", "user " + id  + " deleted successfully!");
+		session.setAttribute("msgs", "user " + id + " deleted successfully!");
 		return "redirect:/homepage";
 	}
-	
+
 	@RequestMapping("/registration")
 	public String registerAnAccount() {
-		
+
 		return "register";
 	}
-	
+
 	@RequestMapping(path = "/registration-process", method = RequestMethod.POST)
 	public String registrationProcess(@ModelAttribute User user, HttpSession session) {
 		userDao.registerUser(user);
 		session.setAttribute("msg", "Registration is success!");
 		return "redirect:/login";
 	}
-	
-	
-	
+
 	@RequestMapping("/login")
 	public String loginAccount() {
-		
+
 		return "login";
 	}
+
+	@RequestMapping(path = "login-process", method = RequestMethod.POST)
+	public String loginProcess(@RequestParam("email") String eml, @RequestParam("password") String pass,
+			HttpSession session) {
+		User user = userDao.loginUser(eml, pass);
+		if (user != null) {
+			session.setAttribute("loginUser", user);
+			return "redirect:/userProfile";
+		} else {
+			session.setAttribute("msg", "Email or Password is incorrect!");
+			return "redirect:/login";
+		}
+
+	}
 	
-	@RequestMapping(path = "login-process", method = RequestMethod.GET)
-	public String loginProcess() {
+	@RequestMapping("/userProfile")
+	public String userProfile() {
 		
-		return "homepage";
+		return "user-profile";
 	}
 
 }

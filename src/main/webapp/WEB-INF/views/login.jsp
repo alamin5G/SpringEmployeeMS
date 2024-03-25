@@ -90,30 +90,24 @@
                         <h4>Login to your account</h4>
                     </div>
                     <c:if test="${not empty msg }">
-                    <div class="bg-warning pt-2 text-center text-black rounded">
+                    <div class="bg-danger pt-2 text-center text-white rounded">
                         	
                         		<h5>${msg }</h5>
                         </div>
                         <c:remove var="msg"/>
                      </c:if>
-                     <c:if test="${not empty lgn }">
-                    <div class="bg-warning pt-2 text-center text-black rounded">
-                        	
-                        		<h5>${lgn }</h5>
-                        </div>
-                        <c:remove var="lgn"/>
-                     </c:if>
+                     
                     	<div class="card-body">
-                            <form action="login-process" method="get">
+                            <form action="login-process" method="post">
                               
                                 <div class="mb-3">
                                     <label for="email" class="from-label">Email Address</label>
-                                    <input name="email" type="email" class="form-control" id="email" placeholder="Enter employee email address">
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email address">
                                 </div>
                                 
                                 <div class="mb-3">
-                                    <label for="Password" class="form-label">Enter Password</label>
-                                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter new password">
+                                    <label for="password" class="form-label">Enter Password</label>
+                                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter your password">
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input name="checkbox" type="checkbox" class="form-check-input" id="terms-and-condition">

@@ -2,6 +2,8 @@ package com.goonok.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -49,18 +51,19 @@ public class UserDaoImpl implements UserDao {
 		return userList;
 	}
 
+	@Transactional
 	@Override
 	public User loginUser(String email, String password) {
 		
 		//select * from user_registration_table where email =? and password =?; ->user object
 		String sql = "from User where email=:eml and password=:pass";
-		hibernateTemplate.execute(s->{
+		User user = (User) hibernateTemplate.execute( s ->{
 			Query q = s.createQuery(sql);
-			
+			q.setParameter("eml", email);
+			q.setParameter("pass", password);
+			return q.uniqueResult();
 		});
-		
-		
-		return null;	
+		return user;
 	}
 
 }
