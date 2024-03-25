@@ -1,5 +1,7 @@
 package com.goonok.interceptor;
 
-public class AuthInterceptor {
+import org.springframework.web.servlet.HandlerInterceptorAdapter;
+
+public class AuthInterceptor extends HandlerInterceptor{
 
 }
